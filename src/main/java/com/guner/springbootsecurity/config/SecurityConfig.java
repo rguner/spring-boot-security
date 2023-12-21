@@ -20,8 +20,9 @@ public class SecurityConfig {
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http.authorizeHttpRequests(
-                        authorize -> authorize.anyRequest().authenticated())
-                 // .formLogin(); // to enable form login html page
+                authorize -> authorize.anyRequest().authenticated())
+                .httpBasic(httpBasic -> {}) // formLoginde bunu disable edebilirsin.
+                //.formLogin(); // to enable form login html page
         ;
         return http.build();
     }
