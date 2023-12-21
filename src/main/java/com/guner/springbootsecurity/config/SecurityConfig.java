@@ -2,6 +2,7 @@ package com.guner.springbootsecurity.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -21,8 +22,8 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(
                 authorize -> authorize.anyRequest().authenticated())
-                .httpBasic(httpBasic -> {})
-                //.formLogin() // to enable form login html page
+                .httpBasic(Customizer.withDefaults())
+                //.formLogin(Customizer.withDefaults()) // to enable form login html page
         ;
         return http.build();
     }
