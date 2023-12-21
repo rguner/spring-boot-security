@@ -22,7 +22,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(
                 authorize -> authorize.anyRequest().authenticated())
                 .httpBasic(httpBasic -> {})
-                .formLogin() // to enable form login html page
+                //.formLogin() // to enable form login html page
         ;
         return http.build();
     }
