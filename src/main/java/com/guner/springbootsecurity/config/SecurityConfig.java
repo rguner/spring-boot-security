@@ -21,8 +21,8 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(
                 authorize -> authorize.anyRequest().authenticated())
-                .httpBasic(httpBasic -> {}) // formLoginde bunu disable edebilirsin.
-                //.formLogin(); // to enable form login html page
+                .httpBasic(httpBasic -> {})
+                .formLogin() // to enable form login html page
         ;
         return http.build();
     }
